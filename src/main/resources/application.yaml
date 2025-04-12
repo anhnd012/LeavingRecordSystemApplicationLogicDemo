@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres
+    username: postgres.uahtliboppunuyfhxtfx
+    password: Nguyenducanh123@
+
+logging:
+  level:
+    org.springframework.jdbc: DEBUG

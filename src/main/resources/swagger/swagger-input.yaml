@@ -1,0 +1,67 @@
+openapi: 3.1.0
+info:
+  title: Swagger Leaving Record System - OpenAPI 3.1
+  description: Swagger Leaving Record System
+  version: 1.0.12
+paths:
+  /employee:
+    post:
+      tags:
+        - Leaving record system
+      summary: create an employee.
+      description: create an employee.
+      operationId: createEmployee
+      requestBody:
+        description: employee info
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployeeModel'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeModel'
+components:
+  schemas:
+    EmployeeModel:
+      type: object
+      required:
+        - name
+        - email
+        - mobile
+        - status
+        - position
+      properties:
+        name:
+          type: string
+          minLength: 3
+          maxLength: 50
+          example: Huy Hoang
+        email:
+          type: string
+          format: email
+          minLength: 3
+          maxLength: 50
+          example: hoang@gmail.com
+        mobile:
+          type: string
+          minLength: 8
+          maxLength: 20
+          example: 232323232
+        position:
+          type: string
+          minLength: 3
+          maxLength: 10
+          example: CEO, HR
+        manager_id:
+          type: integer
+          example: 232323
+        status:
+          type: string
+          minLength: 6
+          maxLength: 8
+          example: ACTIVE, INACTIVE
